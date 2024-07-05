@@ -7,7 +7,7 @@ function App() {
 
   const [to,setTo] = useState("inr");
   const [from,setFrom] = useState("usd");
-  const [amount,setAmount] = useState(1);
+  const [amount,setAmount] = useState(0);
   const [convertedAmount,setConvertedAmount] = useState(0);
 
   const currencyInfo = useCurrencyInfo(from);
@@ -15,7 +15,9 @@ function App() {
 
 
   useEffect(()=>{
-    setConvertedAmount(amount*currencyInfo[to]);
+    var temp = amount*currencyInfo[to];
+    temp = temp.toFixed(2);
+    setConvertedAmount(temp);
   },[amount,to,currencyInfo]);
   
   const swap = ()=>{
@@ -39,7 +41,7 @@ function App() {
         <InputBox 
           label="From"
           selectCurrency = {from}
-          amount={amount.toFixed(2)}
+          amount={amount}
           onAmountChange={setAmount}
           currencyOptions={optionArray}
           onCurrencyChange={(currency)=>{setFrom(currency);}}
@@ -52,7 +54,7 @@ function App() {
         <InputBox 
           label="To"
           selectCurrency = {to}
-          amount={convertedAmount.toFixed(2)}
+          amount={convertedAmount}
           onAmountChange={setConvertedAmount}
           currencyOptions={optionArray}
           onCurrencyChange={(currency)=>{setTo(currency)}}

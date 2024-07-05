@@ -38,7 +38,7 @@ function InputBox({
             value={amount} 
             onChange={(e)=> onAmountChange && onAmountChange(Number(e.target.value))} 
             disabled = {amountDisable}
-            className=" md:text-7xl text-6xl font-sans font-thin border-none outline-none bg-transparent text-center "
+            className=" md:text-7xl text-6xl font-sans font-thin border-none outline-none bg-transparent text-center overflow-auto"
             >
         </input>
         </div>
