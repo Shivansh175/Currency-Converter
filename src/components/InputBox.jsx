@@ -1,6 +1,4 @@
-// import React from "react";
-import { useState } from "react";
-import API_KEY from "../Constants";
+
 function InputBox({
     label,
     amount,
