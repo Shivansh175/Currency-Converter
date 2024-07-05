@@ -45,7 +45,7 @@ function App() {
           onCurrencyChange={(currency)=>{setFrom(currency);}}
         />
         <button onClick={swap}
-          className="bg-pink-900 text-white px-8 py-3 flex justify-center items-center text-xl rounded-full mx-4"
+          className="bg-pink-900 text-white px-8 py-3 flex justify-center items-center text-xl rounded-full mx-4 h-fit self-center"
         >
           Swap
         </button>
