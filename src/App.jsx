@@ -31,11 +31,11 @@ function App() {
 
   return (
     <div className="w-full h-screen flex justify-center items-center bg-gray-100">
-      <div id="card" className="w-10/12 h-5/6 flex flex-col justify-center items-center shadow-xl bg-white">
-        <h2 className="justify-self-start text-3xl font-sans mb-16">
+      <div id="card" className="sm:w-10/12 lg:h-5/6 sm:h-screen w-full h-screen flex flex-col justify-center items-center shadow-xl bg-white">
+        <h2 className="justify-self-start lg:text-3xl text-4xl font-sans lg:mb-16 mb-8">
           Currency Converter
         </h2>
-        <div className="w-full flex justify-center mt-4">
+        <div className="w-full flex flex-col items-center lg:flex-row justify-center lg:mt-4">
         <InputBox 
           label="From"
           selectCurrency = {from}
@@ -45,7 +45,7 @@ function App() {
           onCurrencyChange={(currency)=>{setFrom(currency);}}
         />
         <button onClick={swap}
-          className="bg-pink-900 text-white px-8 py-3 flex justify-center items-center text-xl rounded-full mx-4"
+          className="bg-pink-900 text-white px-10 lg:px-4 py-3 flex justify-center items-center text-xl rounded-full mx-4 mt-3 mb-2 lg:my-auto lg:h-full sm:h-fit"
         >
           Swap
         </button>
